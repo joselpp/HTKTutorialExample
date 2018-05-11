@@ -1,0 +1,78 @@
+WARNING: no script file beep/beep.ded
+WARNING: no script file Nombres/Nombres_MX_dict.dat.ded
+Missing Words
+-------------
+AUDIO-VISUAL
+CHAUFFEUR-DRIVEN
+COAUTHORS
+EIGTH
+GUS
+JUNGLE-LIKE
+KAYO
+MAIDS'
+MICROORGANISMS
+MISPERCEIVES
+REUPHOLSTERING
+THIRTY-FIVE
+TRISH
+ZIG-ZAGGED
+ZIRCONS
+
+Dictionary Usage Statistics
+---------------------------
+  Dictionary    TotalWords WordsUsed  TotalProns PronsUsed
+        beep    237674        727     256972        842
+Nombres_MX_d       151          0        151          0
+  dict_short       727        727        842        842
+
+742 words required, 15 missing
+
+New Phone Usage Counts
+---------------------
+  1. ah    :    74
+  2. sp    :   842
+  3. ax    :   278
+  4. ey    :    91
+  5. b     :    84
+  6. r     :   237
+  7. iy    :   106
+  8. v     :    53
+  9. ih    :   276
+ 10. t     :   268
+ 11. l     :   193
+ 12. aw    :    30
+ 13. k     :   168
+ 14. ao    :    62
+ 15. d     :   182
+ 16. ng    :    53
+ 17. s     :   227
+ 18. oh    :    73
+ 19. ae    :    76
+ 20. ch    :    24
+ 21. ua    :    13
+ 22. sh    :    43
+ 23. n     :   256
+ 24. m     :   109
+ 25. aa    :    24
+ 26. jh    :    41
+ 27. z     :   117
+ 28. g     :    52
+ 29. eh    :    96
+ 30. hh    :    45
+ 31. ia    :    29
+ 32. y     :    45
+ 33. ow    :    62
+ 34. uw    :    52
+ 35. dh    :    31
+ 36. th    :    22
+ 37. p     :    99
+ 38. oy    :    13
+ 39. ay    :    69
+ 40. w     :    65
+ 41. f     :    91
+ 42. uh    :    23
+ 43. er    :    33
+ 44. ea    :    18
+ 45. zh    :     2
+
+Dictionary dict_short created
