@@ -1,0 +1,17 @@
+$digit = ONE | TWO | THREE | FOUR | FIVE |
+         SIX | SEVEN | EIGHT | NINE | OH | ZERO;
+$name = [ DIEGA ] CONSUELO |
+        JOSE [ LUIS ] |
+        ALMA |
+        ANA |
+        CARLOS |
+        ALFONSO |
+        FERNANDA |
+        DIEGO |
+        GRIS |
+        ESTEBAN |
+        BRENDA |
+        PEDRO |
+        MORENA ;
+
+( SENT-START ( DIAL <$digit> | (PHONE|CALL) $name) SENT-END )
