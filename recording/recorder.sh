@@ -1,10 +1,17 @@
 #!/bin/bash
 
 # Input
-f_prompts="/home/jluis/Devel/TestBox/HTK/dictionaries/TIMIT/TRAIN/PROMPTS_TRAIN_SHORT_UPPER.txt"
-default_audio_name="out.wav"
+f_prompts=$1
+default_audio_nam="out.wav"
+preffix="S"
 time_pause=2            # [s]
 wait_max=60             # Number of maximum time_pause steps to wait for recording
+
+if ! [ -f $f_prompts ]
+then
+    echo "Unable to locate prompts file: ${f_prompts}"
+    exit 1
+fi
 
 echo "Script to rename output files from audio recorder for the set of prompts provided by ${f_prompts}"
 echo ""
@@ -14,7 +21,7 @@ while read -r line
 do
     echo $line
     prompt=$(echo $line | cut -d ' ' -f1)
-    file_out="S${prompt}.wav"
+    file_out="${preffix}${prompt}.wav"
 
     if ! [ -f "$file_out" ] # Recording audio
     then
