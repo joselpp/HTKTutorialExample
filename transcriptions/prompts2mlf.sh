@@ -8,9 +8,9 @@
 #       prompts2mlf.sh prompts_file mlf_file
 #
 # Input:
-#       mlf_file: File containing the Master Label File
-# Output:
 #       prompts_file: File containing the set of prompts 
+# Output:
+#       mlf_file: File containing the Master Label File
 #
 
 preffix='S'
