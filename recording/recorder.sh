@@ -1,6 +1,30 @@
 #!/bin/bash
+# Script to assist the recording process. It is expected to be launched along with an audio recorder
+# program, such  as Audacity. It shows the user the list of sentences to be recorded and renames the
+# files generated. 
+# It uses the list of prompts provided by a file to print into screen the corresponding sentence to 
+# record with the audio recorder. The recorded file corresponding to the current prompt must be 
+# saved with the provisional name indicated by "default_audio_nam", which is then renamed by the 
+# script to the proper name as indicated by the numeric tag of each prompt. The script provides a 
+# waiting time of 2 minutes to record the audio, time limit that can be adjusted. If the waiting 
+# time is exceeded, the program ends.
+#
+# Usage:
+#       recorder.sh prompts_file
+#
+# Input:
+#       prompts_file: File containing the set of prompts to record
+#
+# Output:
+#       The script only renames the files generated with the audio recording program.
+#
 
-# Input
+if [ $# -ne 1 ]
+then
+    echo "Number of arguments incorrect! One parameter file is required!"
+    exit 1
+fi
+
 f_prompts=$1
 default_audio_nam="out.wav"
 preffix="S"
@@ -15,7 +39,7 @@ fi
 
 echo "Script to rename output files from audio recorder for the set of prompts provided by ${f_prompts}"
 echo ""
-echo "List of prompt to record:"
+echo "List of prompts to record:"
 echo ""
 while read -r line
 do
@@ -27,7 +51,7 @@ do
     then
         k=0
         echo "Recording..."
-        while ! [ -f $default_audio_name ] && [ $k -lt $wait_max ]
+        while [[ !(-f $default_audio_name) ]] && [ $k -lt $wait_max ]
         do
             ((k++))
             sleep $time_pause
@@ -45,6 +69,6 @@ do
         echo "${file_out} already exists!"
         echo ""
     fi
-
+exit 1
 done < "${f_prompts}"
 
