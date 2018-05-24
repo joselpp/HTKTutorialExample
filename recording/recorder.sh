@@ -28,7 +28,7 @@ then
 fi
 
 f_prompts=$1
-default_audio_nam="out.wav"
+default_audio_name="out.wav"
 preffix="S"
 time_pause=2            # [s]
 wait_max=60             # Number of maximum time_pause steps to wait for recording
@@ -53,7 +53,7 @@ do
     then
         k=0
         echo "Recording..."
-        while [[ !(-f $default_audio_name) ]] && [ $k -lt $wait_max ]
+        while ! [ -f $default_audio_name ] && [ $k -lt $wait_max ]
         do
             ((k++))
             sleep $time_pause
@@ -63,7 +63,6 @@ do
             echo "Recording waiting period ($((wait_max*time_pause)) [s]) elapsed!"
             exit 1
         fi
-
         mv "$default_audio_name" "${file_out}"
         echo "${file_out} generated!"
         echo ""
@@ -71,6 +70,5 @@ do
         echo "${file_out} already exists!"
         echo ""
     fi
-exit 1
 done < "${f_prompts}"
 
