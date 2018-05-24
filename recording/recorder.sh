@@ -22,6 +22,8 @@
 if [ $# -ne 1 ]
 then
     echo "Number of arguments incorrect! One parameter file is required!"
+    echo "Usage:"
+    echo "      recorder.sh prompts_file"
     exit 1
 fi
 
