@@ -27,16 +27,18 @@ then
     exit 1
 fi
 
-# Discarding the numeric tag value | Removing final characters '.?!,:;' | Converting spaces into new lines |
-# Converting lower case letters to upper case | Sorting words | Removing repeated words  
-cut -d' ' -f2- $file_prompts | tr -d '.?!,:;' | tr [:space:] '\n' | tr [:lower:] [:upper:] | sort | uniq > $file_tmp 
+# Discarding the numeric tag value
+# Removing final characters '".?!,:;'
+# Converting spaces into new lines
+# Converting lower case letters to upper case
+# Sorting words
+# Removing repeated words
+cat $file_prompts | tr "[:blank:]" " " | tr -s " " | cut -d' ' -f2- | tr -d '\".?!,:;' | tr [:space:] '\n' | tr [:lower:] [:upper:] | sort | uniq > $file_tmp 
+
 N_words=$(wc -l < $file_tmp)
-((N_words--))
 
 echo "N_words = $N_words"
-tail -n${N_words} $file_tmp > $file_wlist
+mv $file_tmp $file_wlist
 
-# Removing temporal file
-rm $file_tmp 
 
- 
+
