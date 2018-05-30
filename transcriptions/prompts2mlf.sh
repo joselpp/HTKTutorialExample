@@ -31,8 +31,8 @@ then
     exit 1
 fi
 
-# "?", "!" and "." symbols removal
-sed 's/[.?!]//g' $file_prompts | tr -s " " > $file_tmp
+# Removing characters "\".?!,:;" symbols removal
+sed 's/[.?!,:;\"]//g' $file_prompts | tr -s " " > $file_tmp
 
 # Master Label File header
 echo "#!MLF!#" > $file_mlf
