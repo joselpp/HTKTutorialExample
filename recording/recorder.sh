@@ -2,17 +2,30 @@
 
 # Input
 f_prompts=$1
-default_audio_nam="out.wav"
+default_audio_name="out.wav"
 preffix="S"
 time_pause=2            # [s]
 wait_max=60             # Number of maximum time_pause steps to wait for recording
 
+#Validating right number of arguments
+if [ $# -ne 1 ]
+then
+    echo "Incorrect number of arguments!"
+    echo "$(echo ${0} | sed 's/[ \t]*$//' | rev | cut -d'/' -f1 | rev) $*"
+    echo "Usage:"
+    echo "  recorder.ksh \"Prompts_file\""
+    echo ""
+    exit 1
+fi
+
+#Validating that prompts file exist
 if ! [ -f $f_prompts ]
 then
     echo "Unable to locate prompts file: ${f_prompts}"
     exit 1
 fi
 
+#Main body
 echo "Script to rename output files from audio recorder for the set of prompts provided by ${f_prompts}"
 echo ""
 echo "List of prompt to record:"
